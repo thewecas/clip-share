@@ -1,0 +1,25 @@
+.note {
+  margin-inline: auto;
+  width: fit-content;
+  padding: var(--pad);
+  margin-block: var(--space);
+  filter: contrast(90%);
+  border-radius: var(--radius);
+  background-color: var(--bg);
+  color: var(--primary);
+  font-weight: 400;
+  font-size: 1rem;
+  .title {
+    font-size: 1.4rem;
+  }
+}
+header {
+  border-bottom: 1px solid var(--secondary);
+}
+footer {
+  position: sticky;
+  top: 100%;
+  background-color: var(--bg);
+  color: var(--primary);
+  filter: contrast(90%);
+}

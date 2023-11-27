@@ -1,0 +1,9 @@
+<div class="container">
+  <span class="mat-icon bold">inventory</span>
+  <h1 class="title">{{ title }}</h1>
+  <button
+    class="theme-toggle mat-icon bold fill btn"
+    [innerText]="isDarkMode ? 'light_mode' : 'dark_mode'"
+    (click)="toggleTheme()"
+  ></button>
+</div>

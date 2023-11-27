@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/reset.scss";
+@import "./assets/styles/variables.scss";
+@import "./assets/styles/font.scss";
+@import "./assets/styles/mat-icons.scss";
+
+:root {
+  font-size: min(5vw, 16px);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--primary);
+}
+
+.container {
+  width: var(--responsive-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.btn {
+  background-color: var(--bg);
+  color: var(--primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    cursor: pointer;
+    filter: contrast(80%);
+  }
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--secondary);
+  padding: 0.5rem 1rem;
+  min-width: 150px;
+}
+
+.input {
+  display: block;
+  background-color: var(--bg);
+  color: var(--primary);
+  width: 100%;
+  filter: contrast(95%);
+  margin-inline: auto;
+  padding: 1rem;
+  border: 1px solid var(--secondary);
+  border-radius: var(--radius);
+  resize: none;
+  font-size: 1rem;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-visible {
+    border: none;
+    outline: none;
+    border: 1px solid var(--primary);
+  }
+}
+
+textarea {
+  min-height: 40vh;
+  max-height: 80vh;
+}

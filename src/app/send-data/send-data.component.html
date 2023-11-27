@@ -1,0 +1,23 @@
+<div class="container">
+  <textarea
+    placeholder="Enter Text here"
+    class="input"
+    cols="30"
+    rows="10"
+    [(ngModel)]="inputText"
+  ></textarea>
+  <button
+    class="btn btn-primary"
+    (click)="handleSendData()"
+    [disabled]="isBtnDisabled"
+    [innerText]="btnInnerText"
+  ></button>
+
+  <div class="info" [class.openInfo]="isDisplayClipId">
+    Your <span class="title">ClipShare</span> id is
+    <span class="clipId">{{ clipId }}</span>
+    <button class="btn" (click)="copyClipID()">
+      <span class="mat-icon bold">content_copy</span>
+    </button>
+  </div>
+</div>
