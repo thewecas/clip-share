@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { AppService } from '../app.service';
 
 @Component({
@@ -13,9 +14,13 @@ export class SendDataComponent implements OnInit {
   btnText = 'Send Data';
   clipId!: string;
   isDisplayClipId = false;
+  isDarkMode$!: BehaviorSubject<boolean>;
+
   constructor(private service: AppService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isDarkMode$ = this.service.isDarkMode$;
+  }
 
   handleSendData() {
     if (this.inputText.trim().length == 0) {
@@ -36,7 +41,7 @@ export class SendDataComponent implements OnInit {
     });
   }
 
-  copyClipID() {
+  copyText() {
     navigator.clipboard.writeText(this.clipId);
   }
 

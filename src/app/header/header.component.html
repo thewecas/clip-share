@@ -3,14 +3,15 @@
     <span class="mat-icon bold">inventory</span>
     <img
       class="brand-img"
+      width="auto"
+      height="auto"
       [ngClass]="(isDarkMode$ | async) ? 'light-filter' : 'dark-filter'"
       src="../../assets/images/logo.svg"
       alt=""
     />
   </div>
   <button
-    class="theme-toggle mat-icon bold fill btn"
-    [innerText]="(isDarkMode$ | async) ? 'light_mode' : 'dark_mode'"
+    class="theme-toggle btn"
     (click)="toggleTheme()"
-  ></button>
+  > <img class="icon" [src]="(isDarkMode$ | async) ? lightModeICN:darkModeICN" alt=""></button>
 </div>

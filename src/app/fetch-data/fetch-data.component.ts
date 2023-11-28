@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { AppService } from '../app.service';
 
 @Component({
@@ -12,9 +13,13 @@ export class FetchDataComponent implements OnInit {
   outputText = '';
   btnText = 'Fetch Data';
   isBtnDisabled = false;
+  isDarkMode$!: BehaviorSubject<boolean>;
+
   constructor(private service: AppService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isDarkMode$ = this.service.isDarkMode$;
+  }
 
   handleFetchData() {
     this.btnText = 'Fetching Data';

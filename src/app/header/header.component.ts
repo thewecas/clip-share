@@ -11,6 +11,9 @@ export class HeaderComponent implements OnInit {
   @Input() isDarkMode$!: BehaviorSubject<boolean>;
   @Output() themeChange = new EventEmitter();
 
+  darkModeICN = '../../assets/images/dark_mode.svg';
+  lightModeICN = '../../assets/images/light_mode.svg';
+
   constructor() {}
 
   ngOnInit(): void {}

@@ -8,23 +8,26 @@
   ></textarea>
   <div class="btn-container">
     <button
-    class="btn btn-primary"
-    (click)="handleSendData()"
-    [disabled]="isBtnDisabled"
-    [innerText]="btnText"
+      class="btn btn-primary"
+      (click)="handleSendData()"
+      [disabled]="isBtnDisabled"
+      [innerText]="btnText"
     ></button>
     <button class="btn btn-secondary" (click)="clearInput()">Clear</button>
   </div>
 
-  <div class="info" [class.openInfo]="isDisplayClipId" ngClass="{
-    isDisplayClipId:'openInfo',
-    status==400:'error',
-    status==201:'succus'
-  }">
+  <div class="info" [class.openInfo]="isDisplayClipId">
     Your One Time id is &nbsp;
     <span class="clipId">{{ clipId }}</span>
-    <button class="btn" (click)="copyClipID()">
-      <span class="mat-icon bold">content_copy</span>
+    <button class="btn" (click)="copyText()">
+      <img
+        class="icon"
+        width="auto"
+        height="auto"
+        [ngClass]="(isDarkMode$ | async) ? 'light-filter' : 'dark-filter'"
+        src="../../assets/images/copy.svg"
+        alt=""
+      />
     </button>
   </div>
 </div>

@@ -1,13 +1,39 @@
 <div class="container">
-    <div class="input-wrapper">
-        <input type="number" class="input" [(ngModel)]="inputText" placeholder="Clipshare id" >
-        <div class="btn-container">
-            <button class="btn-primary" (click)="handleFetchData()" [innerText]="btnText" [disabled]="isBtnDisabled"></button>
-        <button class="btn-secondary" (click)="clearInput()">Clear</button>
-        </div>
+  <div class="input-wrapper">
+    <input
+      type="number"
+      class="input"
+      [(ngModel)]="inputText"
+      placeholder="Clipshare id"
+    />
+    <div class="btn-container">
+      <button
+        class="btn-primary"
+        (click)="handleFetchData()"
+        [innerText]="btnText"
+        [disabled]="isBtnDisabled"
+      ></button>
+      <button class="btn-secondary" (click)="clearInput()">Clear</button>
     </div>
-    <div class="output-wrapper">
-        <textarea readonly class="input" [innerText]="outputText" cols="30" rows="10" placeholder="Enter Your id and click fetch data"></textarea>
-        <span *ngIf="outputText" class="copy-btn btn mat-icon bold" (click)="copyText()">content_copy</span>
-    </div>
+  </div>
+  <div class="output-wrapper">
+    <textarea
+      readonly
+      class="input"
+      [innerText]="outputText"
+      cols="30"
+      rows="10"
+      placeholder="Enter Your id and click fetch data"
+    ></textarea>
+    <img
+      *ngIf="outputText"
+      (click)="copyText()"
+      class="icon copy-btn"
+      width="auto"
+      height="auto"
+      [ngClass]="(isDarkMode$ | async) ? 'light-filter' : 'dark-filter'"
+      src="../../assets/images/copy.svg"
+      alt=""
+    />
+  </div>
 </div>

@@ -13,11 +13,11 @@ export class AppComponent implements OnInit {
   isSendData = true;
   isDarkMode$!: BehaviorSubject<boolean>;
 
-  constructor(private servie: AppService) {}
+  constructor(private service: AppService) {}
 
   ngOnInit(): void {
-    this.servie.theme = localStorage.getItem('theme') ?? 'light';
-    this.isDarkMode$ = this.servie.isDarkMode$;
+    this.service.theme = localStorage.getItem('theme') ?? 'light';
+    this.isDarkMode$ = this.service.isDarkMode$;
   }
 
   toggleBtn(isSendData: boolean) {
@@ -25,6 +25,6 @@ export class AppComponent implements OnInit {
   }
 
   handleThemeChange(value: string) {
-    this.servie.theme = value;
+    this.service.theme = value;
   }
 }
