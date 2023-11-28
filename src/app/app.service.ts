@@ -23,6 +23,7 @@ export class AppService {
   }
 
   set theme(value: string) {
+    localStorage.setItem('theme', value);
     document.documentElement.setAttribute('theme', value);
     this.isDarkMode$.next(value == 'dark');
   }

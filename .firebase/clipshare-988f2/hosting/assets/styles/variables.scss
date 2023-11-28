@@ -1,0 +1,19 @@
+:root {
+  --responsive-width: min(100%, 1440px);
+  --input-width: min(100%, 500px);
+  --radius: 1em;
+
+  //colors
+  --bg: #e1e1e1;
+  --accent: #1f1f1f;
+  --primary: #3e3e3e;
+  --secondary: #c1c1c1;
+  --btn-bg: #3f3f3f;
+}
+
+:root[theme="dark"] {
+  --bg: #212121;
+  --accent: #dadbdb;
+  --primary: #b2b2b2;
+  --secondary: #393939;
+}
