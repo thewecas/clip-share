@@ -13,10 +13,7 @@ export class HeaderComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.toggleTheme();
-    localStorage.getItem('theme');
-  }
+  ngOnInit(): void {}
 
   toggleTheme() {
     this.isDarkMode$.next(!this.isDarkMode$.value);
