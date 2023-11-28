@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SendDataComponent } from './send-data/send-data.component';
+import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { NotesComponent } from './notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { SendDataComponent } from './send-data/send-data.component';
     HeaderComponent,
     FooterComponent,
     SendDataComponent,
+    FetchDataComponent,
+    NotesComponent,
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],

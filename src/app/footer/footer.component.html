@@ -1,4 +1,9 @@
 <div class="container">
-  <span class="mat-icon">copyright</span> <span class="title">ClipShare</span>.
-  All Rights Reserved.
+  <span class="mat-icon">copyright</span>
+  <img
+    class="brand"
+    [ngClass]="(isDarkMode$ | async) ? 'light-filter' : 'dark-filter'"
+    src="../../assets/images/logo.svg"
+    alt=""
+  />. All Rights Reserved.
 </div>

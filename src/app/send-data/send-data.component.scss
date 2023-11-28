@@ -25,16 +25,15 @@
     color: var(--primary);
     padding: 1rem;
     border-radius: 0.5em;
-    .title {
-      font-size: 1.2rem;
-      padding-inline: 0.5ch;
+    .clipId{
+      font-weight: bold;
     }
     .btn {
       margin-left: auto;
       background-color: #80c88085;
     }
     .mat-icon {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   }
 }

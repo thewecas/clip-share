@@ -1,13 +1,17 @@
 <header>
-  <app-header [title]="title"></app-header>
+  <app-header [title]="title" (themeChange)="handleThemeChange($event)" [isDarkMode$]="isDarkMode$"></app-header>
 </header>
 
-<div class="note">
-  Only Text can be shared via <span class="title">Clipshare</span>
+<div class="toggle-btn-container" [ngClass]="isSendData ? 'send' : 'fetch'">
+  <button class="btn" (click)="toggleBtn(true)">Send Data</button>
+  <button class="btn" (click)="toggleBtn(false)">Fetch Data</button>
 </div>
 
-<app-send-data></app-send-data>
+
+
+<app-send-data *ngIf="isSendData"></app-send-data>
+<app-fetch-data *ngIf="!isSendData"></app-fetch-data>
 
 <footer>
-  <app-footer></app-footer>
+  <app-footer [isDarkMode$]="isDarkMode$"></app-footer>
 </footer>

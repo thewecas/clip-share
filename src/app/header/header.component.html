@@ -1,9 +1,16 @@
 <div class="container">
-  <span class="mat-icon bold">inventory</span>
-  <h1 class="title">{{ title }}</h1>
+  <div class="brand">
+    <span class="mat-icon bold">inventory</span>
+    <img
+      class="brand-img"
+      [ngClass]="(isDarkMode$ | async) ? 'light-filter' : 'dark-filter'"
+      src="../../assets/images/logo.svg"
+      alt=""
+    />
+  </div>
   <button
     class="theme-toggle mat-icon bold fill btn"
-    [innerText]="isDarkMode ? 'light_mode' : 'dark_mode'"
+    [innerText]="(isDarkMode$ | async) ? 'light_mode' : 'dark_mode'"
     (click)="toggleTheme()"
   ></button>
 </div>

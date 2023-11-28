@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL: 'https://gz7582r6-5000.inc1.devtunnels.ms/',
+  URL: 'https://gz7582r6-5000.inc1.devtunnels.ms/note',
 };
 
 /*

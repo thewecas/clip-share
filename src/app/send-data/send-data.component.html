@@ -6,15 +6,22 @@
     rows="10"
     [(ngModel)]="inputText"
   ></textarea>
-  <button
+  <div class="btn-container">
+    <button
     class="btn btn-primary"
     (click)="handleSendData()"
     [disabled]="isBtnDisabled"
-    [innerText]="btnInnerText"
-  ></button>
+    [innerText]="btnText"
+    ></button>
+    <button class="btn btn-secondary" (click)="clearInput()">Clear</button>
+  </div>
 
-  <div class="info" [class.openInfo]="isDisplayClipId">
-    Your <span class="title">ClipShare</span> id is
+  <div class="info" [class.openInfo]="isDisplayClipId" ngClass="{
+    isDisplayClipId:'openInfo',
+    status==400:'error',
+    status==201:'succus'
+  }">
+    Your One Time id is &nbsp;
     <span class="clipId">{{ clipId }}</span>
     <button class="btn" (click)="copyClipID()">
       <span class="mat-icon bold">content_copy</span>

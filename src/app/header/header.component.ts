@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -7,19 +8,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() title!: string;
-  isDarkMode = false;
+  @Input() isDarkMode$!: BehaviorSubject<boolean>;
+  @Output() themeChange = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {
     this.toggleTheme();
+    localStorage.getItem('theme');
   }
 
   toggleTheme() {
-    document.documentElement.setAttribute(
-      'theme',
-      this.isDarkMode ? 'dark' : 'light'
-    );
-    this.isDarkMode = !this.isDarkMode;
+    this.isDarkMode$.next(!this.isDarkMode$.value);
+    const theme = this.isDarkMode$.value ? 'dark' : 'light';
+    this.themeChange.emit(theme);
   }
 }

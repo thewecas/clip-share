@@ -1,9 +1,9 @@
 .container {
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   padding: 0.5rem;
-  .title {
-    font-size: 1.5rem;
+  .brand {
+    width: 4rem;
   }
 }

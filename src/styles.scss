@@ -31,13 +31,29 @@ body {
     cursor: pointer;
     filter: contrast(80%);
   }
+  &:disabled {
+    filter: contrast(60%);
+  }
 }
 
 .btn-primary {
+  @extend .btn;
   background-color: var(--accent);
   color: var(--secondary);
-  padding: 0.5rem 1rem;
-  min-width: 150px;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn-secondary {
+  @extend .btn;
+  background-color: var(--secondary);
+  color: var(--primary);
+  padding: 0.5rem 1.5rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .input {
@@ -47,13 +63,15 @@ body {
   width: 100%;
   filter: contrast(95%);
   margin-inline: auto;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--secondary);
   border-radius: var(--radius);
   resize: none;
   font-size: 1rem;
 
-  &:hover,
+  &:hover{
+    border: 1px solid var(--accent);
+  }
   &:active,
   &:focus,
   &:focus-visible {
@@ -63,7 +81,23 @@ body {
   }
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 textarea {
   min-height: 40vh;
   max-height: 80vh;
+  padding: 1rem !important;
 }
+
+.light-filter {
+  filter: invert(99%) sepia(5%) saturate(0%) hue-rotate(181deg) brightness(86%) contrast(120%);
+}
+
+.dark-filter {
+  filter: invert(9%) sepia(0%) saturate(0%) hue-rotate(15deg) brightness(101%) contrast(120%);
+}
+
